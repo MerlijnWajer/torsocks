@@ -19,7 +19,7 @@
 
 #include "compat.h"
 
-#if (defined(__GLIBC__) || defined(__FreeBSD__) || defined(__darwin__) || defined(__NetBSD__))
+#if (defined(__linux__) || defined(__FreeBSD__) || defined(__darwin__) || defined(__NetBSD__))
 
 /*
  * Initialize a pthread mutex. This never fails.
@@ -96,4 +96,4 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine)(void))
 	tsocks_mutex_unlock(&o->mutex);
 }
 
-#endif /* __GLIBC__, __darwin__, __FreeBSD__, __NetBSD__ */
+#endif /* __linux__, __darwin__, __FreeBSD__, __NetBSD__ */
